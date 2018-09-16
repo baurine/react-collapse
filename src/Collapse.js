@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import "./Collapse.css"
 
+// ref: https://www.w3schools.com/howto/howto_js_collapsible.asp
 export default class Collapse extends React.Component {
   constructor(props) {
     super(props)
