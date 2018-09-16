@@ -13,6 +13,13 @@ class App extends Component {
         </header>
         <div className="App-body">
           <Collapse/>
+          <Collapse/>
+
+          <p>Auto Collapse</p>
+          <div>
+            <Collapse autoCollapse={true}/>
+            <Collapse autoCollapse={true}/>
+          </div>
         </div>
       </div>
     );

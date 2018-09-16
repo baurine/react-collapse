@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 import "./Collapse.css"
 
 // ref: https://www.w3schools.com/howto/howto_js_collapsible.asp
@@ -16,8 +17,32 @@ export default class Collapse extends React.Component {
     this.setState({active: !this.state.active})
     if (!this.state.active) {
       this.setState({maxHeight: this._collapse_body.scrollHeight + 'px'})
+
+      if (this.props.autoCollapse) {
+        document.addEventListener('click', this.handleGlobalClick)
+      }
     } else {
       this.setState({maxHeight: '0px'})
+
+      if (this.props.autoCollapse) {
+        document.removeEventListener('click', this.handleGlobalClick)
+      }
+    }
+  }
+
+  handleGlobalClick = (event) => {
+    if (!event.target.classList.contains('collapse-head')) return
+    // console.log(this._collapse_body.parentNode.parentNode)
+    // console.log(event.target.parentNode.parentNode)
+    // <div>
+    //   <div class="collapsible">...</div>
+    //   <div class="collapsible">...</div>
+    // </div>
+    const sameParentContainer =
+      this._collapse_body.parentNode.parentNode === event.target.parentNode.parentNode
+    if (sameParentContainer) {
+      this.setState({active: false, maxHeight: '0px'})
+      document.removeEventListener('click', this.handleGlobalClick)
     }
   }
 
@@ -41,4 +66,12 @@ export default class Collapse extends React.Component {
       </div>
     )
   }
+}
+
+Collapse.propTypes = {
+  autoCollapse: PropTypes.bool
+}
+
+Collapse.defaultProps = {
+  autoCollapse: false
 }
