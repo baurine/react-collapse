@@ -12,6 +12,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-body">
+          <a href="https://github.com/baurine/react-collapse">Go to GitHub</a>
+          <p></p>
+
           <Collapse/>
           <Collapse/>
 
