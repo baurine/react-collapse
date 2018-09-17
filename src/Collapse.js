@@ -13,6 +13,12 @@ export default class Collapse extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    if (this.props.autoCollapse) {
+      document.removeEventListener('click', this.handleGlobalClick)
+    }
+  }
+
   clickHead = () => {
     this.setState({active: !this.state.active})
     if (!this.state.active) {
