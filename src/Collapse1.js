@@ -52,22 +52,32 @@ export default class Collapse1 extends React.Component {
     }
   }
 
+  renderHeadContent() {
+    return 'Open Collapsible'
+  }
+
+  renderBodyContent() {
+    return (
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    )
+  }
+
   render() {
     return (
       <div className='collapsible'>
         <div className={classNames('collapse-head', {active: this.state.active})}
              onClick={this.clickHead}>
-          Open Collapsible
+          { this.renderHeadContent() }
         </div>
         <div className='collapse-body'
              style={{maxHeight: this.state.maxHeight}}
              ref={ref => this._collapse_body=ref}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          { this.renderBodyContent() }
         </div>
       </div>
     )
