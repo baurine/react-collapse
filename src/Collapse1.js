@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import "./Collapse.css"
 
 // ref: https://www.w3schools.com/howto/howto_js_collapsible.asp
-export default class Collapse extends React.Component {
+export default class Collapse1 extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -74,10 +74,10 @@ export default class Collapse extends React.Component {
   }
 }
 
-Collapse.propTypes = {
+Collapse1.propTypes = {
   autoCollapse: PropTypes.bool
 }
 
-Collapse.defaultProps = {
+Collapse1.defaultProps = {
   autoCollapse: false
 }

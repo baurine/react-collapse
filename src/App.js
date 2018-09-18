@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Collapse from './Collapse';
+import Collapse1 from './Collapse1';
 
 class App extends Component {
   render() {
@@ -12,16 +12,16 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-body">
-          <a href="https://github.com/baurine/react-collapse">Go to GitHub</a>
+          <a href="https://github.com/baurine/react-Collapse1">Go to GitHub</a>
           <p></p>
 
-          <Collapse/>
-          <Collapse/>
+          <Collapse1/>
+          <Collapse1/>
 
-          <p>Auto Collapse</p>
+          <p>Auto Collapse1</p>
           <div>
-            <Collapse autoCollapse={true}/>
-            <Collapse autoCollapse={true}/>
+            <Collapse1 autoCollapse={true}/>
+            <Collapse1 autoCollapse={true}/>
           </div>
         </div>
       </div>
